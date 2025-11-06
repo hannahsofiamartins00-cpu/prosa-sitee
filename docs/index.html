@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P.R.O.S.A - Programa de Reestruturação e Otimização do Saneamento e Asfaltamento</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: #F4F1EA;
+            color: #222;
+        }
+        header {
+            background-color: #166534;
+            color: white;
+            padding: 1.2em;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        nav {
+            margin-top: 0.5em;
+        }
+        nav a {
+            color: #fefefe;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 2em;
+            max-width: 900px;
+            margin: auto;
+        }
+        .hero {
+            background: linear-gradient(to right, #166534, #15803d);
+            color: white;
+            text-align: center;
+            padding: 4em 1em;
+        }
+        .hero h2 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
+        }
+        .hero button {
+            background-color: #FBBF24;
+            color: #222;
+            border: none;
+            padding: 0.8em 1.5em;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-section {
+            background-color: #e0f2fe;
+            border-radius: 10px;
+            padding: 2em;
+        }
+        input, select, textarea {
+            width: 100%;
+            margin-bottom: 1em;
+            padding: 0.7em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button.submit {
+            background-color: #166534;
+            color: white;
+            border: none;
+            padding: 1em 1.5em;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #166534;
+            color: white;
+            text-align: center;
+            padding: 1.5em;
+            margin-top: 2em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>P.R.O.S.A</h1>
+    <p>Programa de Reestruturação e Otimização do Saneamento e Asfaltamento</p>
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#relato">Relatar</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<section class="hero" id="inicio">
+    <h2>Nenhuma comunidade deve ser esquecida</h2>
+    <p>Relate o que está errado na sua rua e ajude a transformar o seu bairro.</p>
+    <button onclick="document.getElementById('relato').scrollIntoView({behavior: 'smooth'})">Relatar um problema</button>
+</section>
+
+<section id="relato">
+    <h2>Relatar um problema</h2>
+    <div class="form-section">
+        <form id="reportForm">
+            <label>Nome:</label>
+            <input type="text" id="nome" required>
+            <label>Bairro / Rua:</label>
+            <input type="text" id="endereco" required>
+            <label>Tipo de problema:</label>
+            <select id="tipo" required>
+                <option value="">Selecione...</option>
+                <option value="Buraco na rua">Buraco na rua</option>
+                <option value="Falta de asfalto">Falta de asfalto</option>
+                <option value="Esgoto a céu aberto">Esgoto a céu aberto</option>
+                <option value="Lixo acumulado">Lixo acumulado</option>
+                <option value="Iluminação pública">Iluminação pública</option>
+            </select>
+            <label>Descrição:</label>
+            <textarea id="descricao" rows="4" required></textarea>
+            <label>Fotos (opcional):</label>
+            <input type="file" id="foto" multiple accept="image/*">
+            <button type="submit" class="submit">Enviar relato</button>
+        </form>
+    </div>
+    <div id="mensagem"></div>
+</section>
+
+<section id="sobre">
+    <h2>Sobre nós</h2>
+    <p>O P.R.O.S.A — Programa de Reestruturação e Otimização do Saneamento e Asfaltamento — nasceu do desejo de transformar a dor em ação. Somos um grupo de cidadãos que acredita que cuidar das ruas é cuidar das pessoas.</p>
+</section>
+
+<section id="contato">
+    <h2>Contato</h2>
+    <p>📧 prosa.comunidade@gmail.com</p>
+    <p>📍 Manaus – AM</p>
+</section>
+
+<footer>
+    <p>© 2025 P.R.O.S.A | Todos os direitos reservados</p>
+</footer>
+
+<script>
+    const form = document.getElementById('reportForm');
+    const mensagem = document.getElementById('mensagem');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        mensagem.innerHTML = '<p style="color:green;">Seu relato foi recebido com sucesso! O P.R.O.S.A agradece por cuidar da sua comunidade.</p>';
+        form.reset();
+    });
+</script>
+
+</body>
+</html>
